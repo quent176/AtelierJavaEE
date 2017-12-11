@@ -20,7 +20,7 @@ public class MailContentServlet extends HttpServlet {
         String emailContentGet = request.getParameter("emailContent");
         //request.setAttribute("emailContent", emailContentGet);
         mailBean.setContent(emailContentGet);
-        request.setAttribute("mail", mailBean);
+        request.setAttribute("mailBean", mailBean);
         this.getServletContext().getRequestDispatcher("/victory_email.jsp").forward(request, response);
     }
 

@@ -12,12 +12,8 @@
 </head>
 <body>
 <h1>Success!</h1>
-<%
-    MailBean mailBean
-            = (MailBean) request.getAttribute("mail");
-    out.println(mailBean.getFrom());
-    out.println(mailBean.getTo());
-    out.println(mailBean.getContent());
-%>
+<p id="emailFromSet">From: ${sessionScope.userEmail}</p>
+<p id="emailToGet">To: ${mailBean.to}</p>
+<p id="emailContent">Content : ${mailBean.content}</p>
 </body>
 </html>

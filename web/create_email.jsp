@@ -15,8 +15,6 @@
 <form action="${pageContext.request.contextPath}/victory_email" method="post">
     <label for="emailTo">Send to : </label><input id="emailTo" name="emailTo" type="email"></br>
     <label for="emailContent">Write your email : </label><input id="emailContent" name="emailContent" type="textarea"></br>
-    <%String emailFromSet = (String) request.getAttribute("emailFrom");%>
-    <label for="emailFrom" ></label><input id="emailFrom" name="emailFrom" value="<%=emailFromSet%>"></br>
     <input type="submit" value="Send" />
 </form>
 </body>

@@ -13,6 +13,7 @@
         <servlet-name>MailCreateServlet</servlet-name>
         <url-pattern>/create_email</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>MailContentServlet</servlet-name>
         <servlet-class>fr.wcs.mailapp.MailContentServlet</servlet-class>
@@ -20,5 +21,14 @@
     <servlet-mapping>
         <servlet-name>MailContentServlet</servlet-name>
         <url-pattern>/victory_email</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <servlet-class>fr.wcs.mailapp.UserLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <url-pattern>/user/login</url-pattern>
     </servlet-mapping>
 </web-app>
