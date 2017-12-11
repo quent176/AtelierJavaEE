@@ -10,12 +10,17 @@ import java.io.IOException;
 @WebServlet(name = "MailContentServlet")
 public class MailContentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        MailBean mailBean = new MailBean();
         String emailToGet = request.getParameter("emailTo");
-        request.setAttribute("emailTo", emailToGet);
+        //request.setAttribute("emailTo", emailToGet);
+        mailBean.setFrom(emailToGet);
         String emailFromGet = request.getParameter("emailFrom");
-        request.setAttribute("emailFrom", emailFromGet);
+        //request.setAttribute("emailFrom", emailFromGet);
+        mailBean.setTo(emailToGet);
         String emailContentGet = request.getParameter("emailContent");
-        request.setAttribute("emailContent", emailContentGet);
+        //request.setAttribute("emailContent", emailContentGet);
+        mailBean.setContent(emailContentGet);
+        request.setAttribute("mail", mailBean);
         this.getServletContext().getRequestDispatcher("/victory_email.jsp").forward(request, response);
     }
 

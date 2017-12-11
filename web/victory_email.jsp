@@ -1,4 +1,4 @@
-<%--
+<%@ page import="fr.wcs.mailapp.MailBean" %><%--
   Created by IntelliJ IDEA.
   User: apprenti
   Date: 06/12/17
@@ -13,12 +13,11 @@
 <body>
 <h1>Success!</h1>
 <%
-    String emailToSet = (String) request.getAttribute("emailTo");
-    String emailFromSet = (String) request.getAttribute("emailFrom");
-    String emailContentSet = (String) request.getAttribute("emailContent");
+    MailBean mailBean
+            = (MailBean) request.getAttribute("mail");
+    out.println(mailBean.getFrom());
+    out.println(mailBean.getTo());
+    out.println(mailBean.getContent());
 %>
-<p id="emailFromSet">From: <%=emailToSet%></p>
-<p id="emailToGet">To: <%=emailFromSet%></p>
-<p id="emailContent">Content : <%=emailContentSet%></p>
 </body>
 </html>
